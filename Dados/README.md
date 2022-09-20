@@ -1,3 +1,13 @@
+# Base de Dados
+
+Atraves dos arquivos DUMPS disponibilizando o banco de dados foi possivel realizar o vinculo das tabelas atraves do `person_id`, `loan_id`, `cb_id`.
+
+Com a base de dados em mãos, foi realizado a união das tabelas dentro do SQL e assim foi possivel realizar 2 arquivos para estudo da 2ª semana:
+
+      1-  dados_juntos.csv, toda a base de dados vinculadas sem retirada de nenhuma informação;
+      2-  dados_juntos_tratados.csv, realizado o tratamento de dados retirando as informações nulas ou incompletas;
+
+
 ## Dicionário de dados por tabela
 
 ### dados_mutuarios
