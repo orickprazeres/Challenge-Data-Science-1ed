@@ -32,7 +32,7 @@ Tabela contendo as informações do empréstimo solicitado
 Histório de emprétimos de cada cliente
 
 | Feature | Tradução | Característica |
-| --- | --- |
+| --- | --- | --- |
 |`cb_id`| `cb_id` |ID do histórico de cada solicitante|
 | `cb_person_default_on_file` | `devendo` |  Indica se a pessoa já foi inadimplente: sim (`Y`,`YES`) e não (`N`,`NO`) |
 | `cb_person_cred_hist_length` | `tempo_de_credito` |  Tempo - em anos - desde a primeira solicitação de crédito ou aquisição de um cartão de crédito |
