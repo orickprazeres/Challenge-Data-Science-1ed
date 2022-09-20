@@ -1,72 +1,61 @@
-# Challenge de Data Science
+<h1 align="center"> AluraChallengeDados1 - Alura Cash  </h1>
 
 <div align="center">
-<img src="https://i.imgur.com/oxab3uu.png" width="800px" />
+<img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"><img>
+<img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=yellow"> </img>
+<img src="https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"></img>
+<img src="https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white"> </img>
+<img src="https://img.shields.io/badge/PowerBI-F2C811?style=for-the-badge&logo=Power%20BI&logoColor=black"> </img>
 </div>
 
-Somos uma equipe de dados que foi contratada para fazer parte do banco digital internacional chamado **Alura Cash**. No primeiro dia, a diretoria financeira nos convocou para uma reunião para informar que, recorrentemente, estão surgindo pessoas inadimplentes após a liberação de créditos.
 
-Por conta disso, foi solicitada uma solução para diminuir as perdas financeiras geradas por pessoas mutuárias que não quitam suas dívidas. Nos foi informado também que teríamos o prazo de **um mês** para encontrar essa solução e apresentá-la à diretoria financeira. Sendo assim, solicitamos um conjunto de dados contendo as informações de clientes, da solicitação de empréstimo, do histórico de crédito, bem como se a pessoa mutuária é inadimplente ou não.
+  Neste projeto a Alura nos desafia a encontrar a probabilidade de inadimplência quando um determinado cliente solicitar um empréstimo. Para isso, utilizamos o dataset da Alura Cash que ja vem com algumas variáveis pré-processadas e com a variável alvo "inadimplente" que indica se o cliente pagou ou não o empréstimo.
 
-## Semana 1
+  
+  São 3 etapas propostas separadas por semanas com graus de dificuldade crescentes em que cada uma respectivamente corresponde aos seguintes objetivos: 
+    
+    1- Restaurar BD Alura Cash.
+    
+    2- Construção e validação do Modelo de Aprendizado de Maquina.
+    
+    3- Hospedar Modelo em API. Criar requisição para API e apresentar resultado na ferramenta PowerBI.
 
-A semana 1 é dedicada à análise e estruturação dos dados oferecidos pelo banco com MySQL. Primeiro, foi notado que os dados estavam diferentes dos usuais, pois sua fonte era um ***dump***, o que nos exigiu uma atenção especial na manipulação deles. Assim, buscamos ler todo o registro para entender nossos dados. Notamos que os valores estavam divididos por tabelas características, com valores de ID referenciando os dados de cada cliente.
 
-Então, iniciamos analisando as informações que o conjunto de dados possuía.  Observamos que os dados estavam em inglês, os valores de texto estavam sem padronização, além de vários valores nulos.
+# Etapa 1
+  Nesta etapa, foi necessário realizar a importação do arquivo DUMP para o banco de dados MySQL.
+    
+  Após a importação, foi necessário realizar o tratamento dos dados, realizando tradução no nome das colunas e variaveis assim como modelar uma tabela única para ser lida pelo modelo.
 
-Foi percebida também a existência de uma tabela que continha a relação de todos os IDs de uma mesma pessoa cliente do Alura Cash. Dessa forma, o primeiro passo foi tratar nossos dados para deixá-los padronizados no texto, bem como, corrigir inconsistências relacionadas ao tipo e estruturação deles.
+   Na pasta DATA/DUMP_BD_MySQL, encontra-se o arquivo DUMP do banco de dados e  também o script BD.sql que foi utilizado para os tratamentos dos dados.
+   
+      * Alteração do tipo de dados nas colunas para melhor desempenho.
+      * Tradução de nome de colunas
+      * Tradução de linhas
+      * Inclusão de chaves primarias e estrangeiras.
+      * Criação de tabela única para leitura do modelo.
+      
+# Etapa 2
 
-Depois buscamos unir as tabelas pelos valores de IDs que eram correspondentes entre si, deixando todos os dados em uma única tabela de dados de clientes. Após uma conversa entre a equipe, decidimos não eliminar os valores nulos dentro do banco de dados, pois poderiam conter informações de clientes que são importantes para o banco.
+  Nesta etapa, foi necessário realizar a construção do modelo de aprendizado de maquina, o modelo escolhido foi o GradientBoostingClassifier, que é um modelo de aprendizado de maquina supervisionado que utiliza o algoritmo de boosting para melhorar a performance do modelo.
+  
+  Para isso, foi necessário realizar a leitura do banco de dados, realizar a limpeza dos dados, realizar a transformação dos dados e por fim, realizar a construção do modelo.
+  
+  No arquivo Projeto_V1.ipynb, encontra-se o código utilizado para a construção do modelo assim como o tratamento do dado.
 
-A tabela de dados unidos foi exportada do MySQL como ***csv*** e será utilizada nas próximas semanas.
+  No processo de validação do modelo consta descrito no arquivo ValidarModelos.ipynb, foram testados outros 3 modelos com métodos de Over e Under Sampling e a utilização de GridSearchCV para encontrar os melhores parâmetros para o modelo escolhido.
 
-## Semana 2
+  Ao final de cada processo foi utilizada a biblioteca Pickle para exportar o modelo serializado para o arquivo modelo.pkl que será utilizado na API. ( Assim como os transformadores de dados.)
 
-Na semana 2 buscamos construir um modelo de ML que pudesse predizer de acordo com os dados bancários de cada cliente, se essa pessoa pode ou não se tornar inadimplente. Dessa vez, utilizamos o **Python** no ambiente do **Google Colab** para desenvolver nosso modelo.
+# Etapa 3
+      
+  Após a otimização do modelo, foi necessário realizar a hospedagem do modelo em uma API, para isso foi utilizado o framework FastAPI. O qual deve ser iniciado através do arquivo Main.py.
 
-Primeiramente, coletamos os dados da semana 1 e iniciamos uma análise focada no tratamento de dados para serem inseridos em um modelo de ML,. Desse modo, removemos valores nulos e outliers presentes nos dados, bem como aplicamos o balanceamento, normalização e enconding para tratar o conjunto de dados.
+  Para a requisição na API foi utilizado diretamente os parâmetros de consulta do PowerBi, que realizam uma consulta local através do endereço: 127.0.0.1 e porta 8000. ( Caso a API esteja rodando em outro endereço, deve ser alterado no arquivo de consulta do PowerBi.)
 
-Assim, construimos três modelos de aprendizado de máquina pensando na explicabilidade do resultado final, comparamos o desempenho deles para o projeto e escolhemos o que teve melhor performance. Com isso, buscamos melhorar ainda mais o resultado final do modelo com uma otimização de hiperparâmetros e, assim que obtivemos um bom produto final, salvamos o modelo fazendo sua exportação.
-
-## Equipe de Dados
-
-### Maria Gabriela
-
-<div align="left">
-<img src="https://i.imgur.com/rtR5ClI.jpg" width="300px" />
-</div>
-
-Maria é formada em Sistemas para Internet, apaixonada por tecnologia, dados e gatos. Atuou na área de infra e desenvolvimento. É especialista em SQL, com conhecimento nos bancos de dados mais utilizados atualmente e um pézinho em BI, com o qual tem se desenvolvido tecnicamente.
-
-<a href="https://www.linkedin.com/in/mariagcoliva/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-
-### Danielle Oliveira
-
-<div align="left">
-<img src="https://i.imgur.com/JBep2hL.png" width="300px" />
-</div>
-
-Danielle é formada em Sistemas de Informação. Fez parte do Scuba Team. Atualmente é instrutora nas áreas de Banco de dados, Business Intelligence e NoSQL. É apaixonada por livros, música e tecnologia.
-
-<a href="https://www.linkedin.com/in/danielle-oliveira-071550134/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-
-### Mirla Costa
-
-<div align="left">
-<img src="https://i.imgur.com/eqC6qrV.jpg" width="300px" />
-</div>
-
-Graduanda em Engenharia elétrica pela Universidade Federal do Piauí com pesquisa focada em Aprendizado de Máquina e Inteligência Computacional. Atua como Scuba na Escola de Data Science da Alura e sempre amou muito programar, ensinar e trabalhar com tecnologia. Em seu tempo livre, dedica-se a brincar com seus animais, assistir animações e séries, além de jogar RPG de mesa.
-
-<a href="https://www.linkedin.com/in/mirla-costa/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
-</div>
-
-### João Miranda
-
-<div align="left">
-<img src="https://i.imgur.com/6evW05p.png" width="300px" />
-</div>
-
-Bacharel em Matemática pela UFMG e especialista em Data Science e Analytics pela USP/Esalq. Atualmente é instrutor na Escola de Dados da Alura. Gosta muito de livros, jogos eletrônicos, boardgames e tiro com arco.
-
-<a href="https://www.linkedin.com/in/joaovmiranda/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+  O arquivo de PowerBi é construído em cima de 3 consultas básicas, sendo elas:
+   
+    1- Montar requisição na API.
+    2- Retorno da previsão e probabilidades.
+    3- Consulta dos dados em que o modelo foi treinado.
+  
+#alurachallengedados1
