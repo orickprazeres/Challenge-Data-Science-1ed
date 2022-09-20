@@ -48,5 +48,11 @@
 
 # Etapa 3 -  em andamento
    
-   
+   Objetivos: 
+      
+      1- Montar requisição na API.
+      2- Retorno da previsão e probabilidades.
+      3- Consulta dos dados em que o modelo foi treinado.
+      
+      
 #alurachallengedados1
