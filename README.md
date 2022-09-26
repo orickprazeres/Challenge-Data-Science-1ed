@@ -8,6 +8,12 @@
 <img src="https://img.shields.io/badge/PowerBI-F2C811?style=for-the-badge&logo=Power%20BI&logoColor=black"> </img>
 </div>
 
+<br>
+<div align="center" >
+<img src="semana - 3 e 4/dashboard.gif" width="420" height="300">
+</img>
+</div>
+<br>
 
   Neste projeto a Alura nos desafia a encontrar a probabilidade de inadimplência quando um determinado cliente solicitar um empréstimo. Para isso, utilizamos o dataset da Alura Cash que ja vem com algumas variáveis pré-processadas e com a variável alvo "inadimplente" que indica se o cliente pagou ou não o empréstimo.
 
