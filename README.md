@@ -10,7 +10,7 @@
 
 <br>
 <div align="center" >
-<img src="semana - 3 e 4/dashboard.gif" width="420" height="300">
+<img src="semana - 3 e 4/dashboard.gif" width="620" height="360">
 </img>
 </div>
 <br>
