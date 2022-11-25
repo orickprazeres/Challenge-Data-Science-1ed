@@ -68,16 +68,6 @@
 # O Dashboard
   O Dashboard parte da premissa de um atendente da Alura Cash que recebe uma solicitação de empréstimo e precisa realizar uma análise de risco para aprovar ou não o empréstimo, ao editar os parâmetros no PowerBi e atualizar os dados e isso se faz necessário pois existe uma consulta de requisição e outra de retorno.
   
-<br>
-<div align="center" >
-<img src="semana - 3 e 4/dashboard_pb.gif" width="">
-</img>
-</div>
-<br>
+![](https://github.com/orickprazeres/Challenge-Data-Science-1ed/blob/377f7e4ac0dc66f2f965751c386e461963527f7d/semana%20-%203%20e%204/dashboard_pb.gif#vitrinedev)
   
   Na parte superior do Dashboard podemo observar as informações gerados através do dados do cliente solicitante, e na parte inferior os dados agora são de acordo com o banco de dados, para que seja possível identificar também algumas análises entre o grupo de pessoas que já foram inadimplentes em solicitações anteriores, sendo base para o "atendente" realizar uma análise de risco e para facilitar ainda mais na coluna da esquerda podemos possuimos uns filtros para podermos comparar da melhor forma os dados do cliente solicitante com os clientes anteriores.
-  
-
-
-#vitrinedev
-#alurachallengedados1
