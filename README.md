@@ -20,7 +20,7 @@
    | :placard: Vitrine.Dev |     |
 | -------------  | --- |
 | :sparkles: Nome        | **Alura Cash**
-| :label: Tecnologias | pyhton, MySQL, PowerBi ,scikit_learn, fastapi
+| :label: Tecnologias | pyhton, MySQL, PowerBi , scikit_learn, fastapi
 | :rocket: URL         | [projeto no Github](https://github.com/orickprazeres/Challenge-Data-Science-1ed)
 | :fire: Deploy     | *em breve*
   
