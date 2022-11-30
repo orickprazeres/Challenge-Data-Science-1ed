@@ -17,6 +17,12 @@
 
   Neste projeto a Alura nos desafia a encontrar a probabilidade de inadimplência quando um determinado cliente solicitar um empréstimo. Para isso, utilizamos o dataset da Alura Cash que ja vem com algumas variáveis pré-processadas e com a variável alvo "inadimplente" que indica se o cliente pagou ou não o empréstimo.
 
+   | :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **Alura Cash**
+| :label: Tecnologias | pyhton, MySQL, PowerBi ,scikit_learn, fastapi
+| :rocket: URL         | [projeto no Github](https://github.com/orickprazeres/Challenge-Data-Science-1ed)
+| :fire: Deploy     | *em breve*
   
   São 3 etapas propostas separadas por semanas com graus de dificuldade crescentes em que cada uma respectivamente corresponde aos seguintes objetivos: 
     
@@ -29,14 +35,7 @@
 
 # Semana 1
  Ao realizar a  importação do arquivo DUMP para o banco de dados MySQL, é necessário realizar o tratamento dos dados, realizando tradução no nome das colunas e variaveis assim como modelar uma tabela única para ser lida pelo modelo. E tivemos como desafio criar um arquivo .CSV tratado retirando os dados nulos, traduzindo colunas e informações, que demos o nome de `dados_juntos_tratados.csv`.
- 
- | :placard: Vitrine.Dev |     |
-| -------------  | --- |
-| :sparkles: Nome        | **Alura Cash**
-| :label: Tecnologias | pyhton, MySQL, PowerBi ,scikit_learn, fastapi
-| :rocket: URL         | [projeto no Github](https://github.com/orickprazeres/Challenge-Data-Science-1ed)
-| :fire: Deploy     | *em breve*
- 
+  
    Na pasta Dados/dumps, encontra-se o arquivo DUMP do banco de dados e também o script BD.sql que foi utilizado para os tratamentos dos dados.
    
       * Alteração do tipo de dados nas colunas para melhor desempenho;
